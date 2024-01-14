@@ -2,7 +2,7 @@
   <div class="home">
     <div class="initial">
       <div class="top font-mono">
-        <el-button class="left-name" @click="toHome()">&lt;Shuu/></el-button>
+        <el-button class="left-name">&lt;Shuu/></el-button>
         <el-button class="right-botton" @click="openMenu"><span>.Click()</span><span>:void</span></el-button>
       </div>
       <div class="middle">
@@ -16,7 +16,7 @@
           <div class="char">S</div>
           <div class="char">H</div>
           <div class="char">U</div>
-          <div class="char">.</div>
+          <div class="char text-yellow-500">.</div>
           <div class="char">L</div>
           <div class="char">I</div>
           <div class="char">U</div>
@@ -29,6 +29,12 @@
       <div class="box">
         <span class="text1">WHY ME?</span>
       </div>
+
+      <div class="heart-button" @click="init">
+          <div class="heart-box">
+            <!-- Hearts will be appended here -->
+          </div>
+        </div>
     </div>
 
     <div class="text-600">
@@ -41,9 +47,9 @@
       </button>
       <div class="flex w-full h-full justify-between px-10">
         <div class="menu h-full flex flex-col justify-around text-white pb-20 font-mono w-3/4">
-          <button class="text-7xl text-left" @click="toHome()">.isHome() <span class="text-base">01</span></button>
-          <button class="text-7xl text-left" @click="toHome()">.isBlog() <span class="text-base">02</span></button>
-          <button class="text-7xl text-left" @click="toHome()">.isCategory() <span class="text-base">03</span></button>
+          <button class="text-7xl text-left hover:text-[#42b883]  transition-all duration-300" @click="toHome()"><span>.isHome() </span><span class="text-base">01</span></button>
+          <button class="text-7xl text-left hover:text-[#5876e3] transition-all duration-300" @click="toHome()">.isBlog() <span class="text-base">02</span></button>
+          <button class="text-7xl text-left hover:text-[#e36868] transition-all duration-300" @click="toHome()">.isCategory() <span class="text-base">03</span></button>
         </div>
         <div class="info flex h-full flex-col justify-center font-mono w-1/4">
           <div class="info-item flex flex-col mb-5"> 
@@ -89,7 +95,7 @@ export default {
 
   data() {
     return {
-      isOverlayVisible: false
+      isOverlayVisible: false,
     };
   },
   methods: {
@@ -116,9 +122,40 @@ export default {
       }).then(() => {
         this.isOverlayVisible = false
       })
-    }
+    },
+    init() {
+      const directions = ['up', 'leftup', 'rightup'];
+      const direction = directions[Math.floor(Math.random() * directions.length)];
+
+      const button = this.$el;
+      const top = button.offsetTop;
+      const left = button.offsetLeft;
+
+      const newHeart = document.createElement('div');
+      newHeart.className = `heart animate-${direction}`;
+
+      const heartBox = button.querySelector('.heart-box');
+      heartBox.style.top = `${top}px`;
+      heartBox.style.left = `${left}px`;
+      heartBox.style.zIndex = `999`;
+
+      heartBox.appendChild(newHeart);
+      console.log(heartBox);
+
+      setTimeout(() => this.removeFirst(), 5000);
+    },
+    removeFirst() {
+      const heartBox = this.$el.querySelector('.heart-box');
+      const firstHeart = heartBox.querySelector('.heart:first-child');
+
+      if (firstHeart) {
+        firstHeart.remove();
+      }
+    },
   },
   setup() {
+
+    
     const c = ref();
     const main = ref();
     gsap.registerPlugin(ScrollTrigger);
@@ -177,17 +214,6 @@ export default {
     
       t.from('.text1', {x:innerWidth * 1})
 
-
-      //   ScrollTrigger.create({
-      //     trigger: ".box",
-      //     start: "top 10%", //animation Start at this point
-      //     markers: true,
-      //     scrub: true,
-      //     pin: true,
-      //     onEnter: () => {
-      //     gsap.from(".text1", { x: innerWidth * 1 })
-      //   }
-      // });
         
     });
 
@@ -211,7 +237,7 @@ export default {
 }
 
 .initial{
-  background-color: #15151C;
+  background-color: #18181b;
   width:100%;
   position: relative;
   overflow-x: hidden;
@@ -261,7 +287,7 @@ export default {
   .right-botton:before {
     content: "";
     position: fixed;
-    background: #000;
+    background: #09090b;
     bottom: 0;
     left: 0;
     right: 0;
@@ -300,7 +326,6 @@ export default {
   }
 
   .char {
-    color: white;
     font-size: 7rem;
     display: inline-block;
     margin-right: 6px;
@@ -402,4 +427,138 @@ export default {
   transform: rotate(-45deg);
 }
 
+.heart-icon {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAyMCAxOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5oZWFydDwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9ImhlYXJ0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNi4wMDAwMDAsIC03LjAwMDAwMCkiIGZpbGw9IiNEMDAyMUIiPiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNS41MjM4MDk1LDI1IEMxNiwyNSAxNiwyNSAxNi40NzYxOTA1LDI1IEwyNC4wOTUyMzgxLDE3IEMyNi41NDk4Njc5LDE0LjUxMzUwNDIgMjYuNTQ5ODY3OSwxMC45MDAxNDM2IDI0LjA5NTIzODEsOSBDMjIuMTUwOTIzNSw2LjQ0MjgzNjc3IDE4LjU4NDg3NSw2LjQ0MjgzNjc3IDE2LjQ3NjE5MDUsOSBDMTYsOSAxNiw5IDE1LjUyMzgwOTUsOSBDMTMuNDE1MTI1LDYuNDQyODM2NzcgOS44NDkwNzY0Niw2LjQ0MjgzNjc3IDcuOTA0NzYxOSw5IEM1LjQ1MDEzMjA3LDEwLjkwMDE0MzYgNS40NTAxMzIwNywxNC41MTM1MDQyIDcuOTA0NzYxOSwxNyBMMTUuNTIzODA5NSwyNSBaIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 22px;
+}
+
+.heart {
+  ::v-deep {
+    @extend .heart-icon;
+    position: absolute;
+  }
+}
+
+@mixin animation($move, $duration, $sideduration) {
+  -webkit-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  -moz-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  -o-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  -ms-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+}
+
+.animate-up {
+  z-index: inherit;
+  ::v-deep {
+    position: absolute;
+    @include animation(moveUp, 5s, 2s);
+  }
+}
+
+.animate-leftup {
+  ::v-deep {
+    position: absolute;
+    @include animation(moveLeftUp, 5s, 2s);
+  }
+}
+
+.animate-rightup {
+  ::v-deep {
+    position: absolute;
+    @include animation(moveRightUp, 5s, 2s);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+  } 
+  1% {
+    bottom: 50%;
+    transform: scale(.9);
+    opacity: 1;
+  } 
+  50% {    
+    opacity: 1;
+  }  
+  100% {
+    bottom: 1000%;
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes moveLeftUp {
+  0% {
+    left: 0;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+  } 
+  1% {
+    bottom: 50%;
+    transform: scale(.9);
+    opacity: 1;
+  } 
+  50% {
+    left: -250%;
+    opacity: 1;
+  }  
+  100% {
+    left: -500%;
+    bottom: 1000%;
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes moveRightUp {
+  0% {
+    left: 0;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+  } 
+  1% {
+    bottom: 50%;
+    transform: scale(.9);
+    opacity: 1;
+  } 
+  50% {
+    left: 250%;
+    opacity: 1;
+  }  
+  100% {
+    left: 500%;
+    bottom: 1000%;
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+   100% {
+    margin-left: 30px;
+  }
+}
+
+.content {
+  padding: 200px;
+}
+
+.heart-button {
+  position: relative;
+  ::v-deep {
+    @extend .heart-icon;
+    display: inline-block;
+    cursor: pointer;
+  }
+}
 </style>
