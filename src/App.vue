@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <Nav v-if="state.isShowNav" />
+  <!-- <div class="container"> -->
+  <div >
+    <!-- <Nav v-if="state.isShowNav" /> -->
     <div class="layout">
       <router-view />
       <CustomSlider v-if="state.isShowSlider"></CustomSlider>
@@ -103,8 +104,7 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  // width: 1200px;
-  padding-top: 61px;
+  width: 100%;
 }
 img {
   vertical-align: bottom;

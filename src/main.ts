@@ -5,6 +5,8 @@ import router from "./router";
 import service from "./utils/https";
 import urls from "./utils/urls";
 import mixin from "./mixins";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { 
     ElButton, 
     ElDialog,
@@ -25,6 +27,7 @@ import {
     ElCard,
     ElTag,
     ElIcon,
+    ElBacktop,
     ElCollapseTransition
 } from 'element-plus';
 
@@ -34,6 +37,10 @@ import '@kangc/v-md-editor/lib/style/preview.css';
 // VuePress主题以及样式（这里也可以选择github主题）
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 // Prism
 import Prism from 'prismjs';
@@ -48,6 +55,13 @@ const app = createApp(App)
 // app.mixin(mixin);
 
 app.use(VMdPreview);
+app.use(gsap);
+
+app.mixin({
+  created: function () {
+    this.gsap = gsap;
+  }
+});
 
 app.component(ElButton.name, ElButton);
 app.component(ElDialog.name, ElDialog);
@@ -67,6 +81,7 @@ app.component(ElDropdown.name, ElDropdown);
 app.component(ElCard.name, ElCard);
 app.component(ElTag.name, ElTag);
 app.component(ElIcon.name, ElIcon);
+app.component(ElBacktop.name, ElBacktop);
 app.component(ElCollapseTransition.name, ElCollapseTransition);
 
 app.config.globalProperties.$message = ElMessage;
