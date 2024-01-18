@@ -27,57 +27,19 @@
     </div>
     <div class="content"> 
       <div class="box">
-        <span class="text1 font-mono text-4xl">Why Me?</span>
+        <span class="text1">WHY ME?</span>
       </div>
-      <div class="label flex mt-10 justify-around w-full"> 
-        <div class="learn bg-white w-1/4 h-full pt-5 pb-10 px-10 rounded-lg shadow-xl flex flex-col items-center">
-          <img src="../assets/uh_logo.png" class="w-1/3"/>
-          <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Learning /></div>
-          <div class="font-mono "> 
-            <div class="font-semibold text-red-400">Master's programme: </div>
-            <span>Computer Science (network track)</span>
-          </div>
-          <div class="font-mono mt-1"> 
-            <div class="font-semibold text-red-400">Course topic: </div>
-            <span>Network Protocols / Machine Learning / Data analysis / Big data platforms</span>
-          </div>
-        </div>
-        <div class="experience bg-white w-1/4 h-full pt-5 pb-10 px-10 rounded-lg shadow-xl flex flex-col items-center">
-          <img src="../assets/experience2.png" class="w-1/3"/>
-          <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Experience /></div>
-          <div class="font-mono"> 
-            <div class="font-semibold text-red-400">01.2022 - 05.2023</div>
-            <span class="inline-block font-semibold">Full-Stack Developer</span>
-            <span class="inline-block">Participate in frontend project design, framework selection, overcoming technical challenges, and implementing feature development. Proficiently utilize mainstream JavaScript libraries and development frameworks.</span>
-          </div>
-          <div class="font-mono mt-2"> 
-            <div class="font-semibold text-red-400">07.2019 - 12.2021</div>
-            <span class="inline-block font-semibold">Back-end Developer</span>
-            <span class="inline-block">Responsible for core module development, feature iteration, daily monitoring, troubleshooting, data backup, performance bottleneck analysis, and other related tasks in project management.</span>
-          </div>
-        </div>
-        <div class="skill bg-white w-1/4 h-full pt-5 pb-10 px-10 rounded-lg shadow-xl flex flex-col items-center">
-          <img src="../assets/skill.png" class="w-1/3"/>
-          <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Skills /></div>
-          <div class="font-mono "> 
-            <div class="font-semibold text-red-400">Back-end</div>
-            <span>Java, SQL, Linux, Docker, Dubbo, ZooKeeper</span>
-          </div>
-          <div class="font-mono mt-1"> 
-            <div class="font-semibold text-red-400">Front-end</div>
-            <span>JavaScript, TypeScript, HTML5, CSS3, Vue.js, React.js, Next.js, Tailwind</span>
-          </div>
-          <div class="font-mono mt-1"> 
-            <div class="font-semibold text-red-400">Data Engineering</div>
-            <span>MySQL, Oracle, MongoDB, Kafka, RabbitMQ, Redis</span>
-          </div>
-        </div>
-      </div>
-      
 
+      <div class="heart-button" @click="init">
+          <div class="heart-box">
+            <!-- Hearts will be appended here -->
+          </div>
+        </div>
     </div>
 
-
+    <div class="text-600">
+      <h2 class="">Thanks for Watching :)</h2>
+    </div>
     
     <div v-show="isOverlayVisible" class="overlay w-full h-full">
       <button class="float-right mt-5 mr-10" @click="closeMenu">
@@ -85,9 +47,9 @@
       </button>
       <div class="flex w-full h-full justify-between px-10">
         <div class="menu h-full flex flex-col justify-around text-white pb-20 font-mono w-3/4">
-          <button class="menu1 text-7xl text-left hover:text-[#42b883]  transition-all duration-300" @click="toHome()"><span>.isHome() </span><span class="text-base">01</span></button>
-          <button class="menu2 text-7xl text-left hover:text-[#5876e3] transition-all duration-300" @click="toHome()">.isBlog() <span class="text-base">02</span></button>
-          <button class="menu3 text-7xl text-left hover:text-[#e36868] transition-all duration-300" @click="toHome()">.isCategory() <span class="text-base">03</span></button>
+          <div class="hover:text-[#42b883]  transition-all duration-500 text-7xl text-left" @click="toHome()">.isHome() <span class="text-base">01</span></div>
+          <button class="text-7xl text-left" @click="toHome()">.isBlog() <span class="text-base">02</span></button>
+          <button class="text-7xl text-left" @click="toHome()">.isCategory() <span class="text-base">03</span></button>
         </div>
         <div class="info flex h-full flex-col justify-center font-mono w-1/4">
           <div class="info-item flex flex-col mb-5"> 
@@ -100,8 +62,8 @@
             <span class="text-white text-lg">+358 0415765749</span>
           </div>
           <div class="info-item flex flex-col"> 
-            <span class="text-yellow-500/65 text-2xl underline decoration-2 underline-offset-2">Follow me?</span>
-            <span class="text-white text-lg">Github(Loading....)</span>
+            <span class="text-yellow-500/65 text-2xl underline decoration-2 underline-offset-2">Follow me</span>
+            <span class="text-white text-lg">Git</span>
           </div>
         </div>
     </div>
@@ -130,6 +92,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
+
   data() {
     return {
       isOverlayVisible: false,
@@ -146,31 +109,53 @@ export default {
         ease: 'Expo.easeInOut',
         duration:0.8
       })
-      const t = gsap.timeline({});
-      t.fromTo('.menu1', { y: 10, opacity: 0 }, { y: 0, opacity: 1,duration: 0.3})
-      t.fromTo('.menu2', { y: 10, opacity: 0 }, { y: 0, opacity: 1,duration: 0.3 })
-      t.fromTo('.menu3', { y: 10, opacity: 0 }, { y: 0, opacity: 1,duration: 0.3 })
     },
     closeMenu() {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-      const t = gsap.timeline({});
-      t.fromTo('.menu1', { y: 0, opacity: 1 }, { y: 20, opacity: 0,duration: 0.1})
-      t.fromTo('.menu2', { y: 0, opacity: 1 }, { y: 20, opacity: 0,duration: 0.1 })
-      t.fromTo('.menu3', { y: 0, opacity: 1 }, { y: 20, opacity: 0,duration: 0.1 })
-      t.to('.overlay', {
+      gsap.to('.overlay', {
         opacity: 0,
         ease: 'Expo.easeInOut',
-        duration:1
+        duration:0.6
       }).then(() => {
         this.isOverlayVisible = false
       })
     },
+    init() {
+      const directions = ['up', 'leftup', 'rightup'];
+      const direction = directions[Math.floor(Math.random() * directions.length)];
+
+      const button = this.$el;
+      const top = button.offsetTop;
+      const left = button.offsetLeft;
+
+      const newHeart = document.createElement('div');
+      newHeart.className = `heart animate-${direction}`;
+
+      const heartBox = button.querySelector('.heart-box');
+      heartBox.style.top = `${top}px`;
+      heartBox.style.left = `${left}px`;
+      heartBox.style.zIndex = `999`;
+
+      heartBox.appendChild(newHeart);
+      console.log(heartBox);
+
+      setTimeout(() => this.removeFirst(), 5000);
+    },
+    removeFirst() {
+      const heartBox = this.$el.querySelector('.heart-box');
+      const firstHeart = heartBox.querySelector('.heart:first-child');
+
+      if (firstHeart) {
+        firstHeart.remove();
+      }
+    },
   },
   setup() {
 
+    
     const c = ref();
     const main = ref();
     gsap.registerPlugin(ScrollTrigger);
@@ -219,29 +204,21 @@ export default {
 
         t.fromTo('.developer', { y: '-30px', opacity: 0 }, { y: 0, opacity: 1 })
 
-        const t1 = gsap.timeline({});
-const anim2 = t1.fromTo('.text1', {
-        opacity: 0,
-      },{
-        opacity: 1,
-        duration: 0.8
-      });
+      t.add(anim);
+      t.add(() => {}, "+=0.01"); // 空的回调，用于确保 ScrollTrigger 在第一帧时就触发
+      t.add(trigger.update);
 
-      ScrollTrigger.create({
-        trigger: '.text1',
-        animation: anim2,
-        markers: true,
-        start: "top bottom",
-        end: "top top",
-        toggleActions: 'play pause pause pause',
-    //     onUpdate: (self) => {
-    //   console.log(`Start: ${self.start}`);
-    //   console.log(`End: ${self.end}`);
-    // },
-      });
+      // // 启用 ScrollTrigger
+      ScrollTrigger.refresh();
 
-      t1.fromTo('.label', { y: 0, opacity: 0 }, { y: 10, opacity: 1,duration: 0.3})
+    
+      t.from('.text1', {x:innerWidth * 1})
+
         
+    });
+
+    onUnmounted(() => {
+      // ctx.value.revert(); // <- Easy Cleanup!
     });
 
     return { c,main };
@@ -260,16 +237,8 @@ const anim2 = t1.fromTo('.text1', {
 }
 
 .initial{
-  background-color: #18181b;
-  // background-image: linear-gradient(#8b9da9, #fff6e4);
-  // box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
- background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
- background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
- background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%);
- background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%);
- background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
-  
- width:100%;
+  background-color: #15151C;
+  width:100%;
   position: relative;
   overflow-x: hidden;
 }
@@ -318,7 +287,7 @@ const anim2 = t1.fromTo('.text1', {
   .right-botton:before {
     content: "";
     position: fixed;
-    background: #09090b;
+    background: #000;
     bottom: 0;
     left: 0;
     right: 0;
@@ -384,51 +353,27 @@ const anim2 = t1.fromTo('.text1', {
 .content{
   position: absolute;
   width: 100%; 
-  height: 100vh;
-  margin-top:-140vh;
- 
-  // background-image: linear-gradient(#8b9da9, #fff6e4);
-  // box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
-  // // background: url('http://unsplash.it/1200x800') center center no-repeat;
-  // // background-size: cover;
-  // // &:before {
-  // //   content: '';
-	// // position: absolute;
-	// // top: 0;
-	// // right: 0;
-	// // bottom: 0;
-	// // left: 0;
-	// // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-	// // opacity: .6; 
-  // // }
+  height: 10vh;
+  margin-top:-150vh;
+  // background-color:burlywood;
 }
 
-.bg-img {
+
+.box,
+.box2 {
+  text-align: center;
   position: relative;
-  width: 100%;
-  height: 100%;
-  background: url('http://unsplash.it/1200x800') center center no-repeat;
-  background-size: cover;
-  
-  &:before {
-    content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-	opacity: .6; 
+  width: 90%;
+  color: #fff;
+  min-height: 100vh;
+  font-size: 32px;
+}
+
+.box2 {
+  h2 {
+    font-size: 3em;
   }
 }
-
-
-.box {
-  text-align: center;
-  width: 100%;
-  color: #fff;
-}
-
 
 .overlay {
   background-color: rgba(32, 36, 80);
@@ -480,5 +425,140 @@ const anim2 = t1.fromTo('.text1', {
 
 .close-icon::after {
   transform: rotate(-45deg);
+}
+
+.heart-icon {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCAyMCAxOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5oZWFydDwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9ImhlYXJ0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNi4wMDAwMDAsIC03LjAwMDAwMCkiIGZpbGw9IiNEMDAyMUIiPiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNS41MjM4MDk1LDI1IEMxNiwyNSAxNiwyNSAxNi40NzYxOTA1LDI1IEwyNC4wOTUyMzgxLDE3IEMyNi41NDk4Njc5LDE0LjUxMzUwNDIgMjYuNTQ5ODY3OSwxMC45MDAxNDM2IDI0LjA5NTIzODEsOSBDMjIuMTUwOTIzNSw2LjQ0MjgzNjc3IDE4LjU4NDg3NSw2LjQ0MjgzNjc3IDE2LjQ3NjE5MDUsOSBDMTYsOSAxNiw5IDE1LjUyMzgwOTUsOSBDMTMuNDE1MTI1LDYuNDQyODM2NzcgOS44NDkwNzY0Niw2LjQ0MjgzNjc3IDcuOTA0NzYxOSw5IEM1LjQ1MDEzMjA3LDEwLjkwMDE0MzYgNS40NTAxMzIwNywxNC41MTM1MDQyIDcuOTA0NzYxOSwxNyBMMTUuNTIzODA5NSwyNSBaIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 22px;
+}
+
+.heart {
+  ::v-deep {
+    @extend .heart-icon;
+    position: absolute;
+  }
+}
+
+@mixin animation($move, $duration, $sideduration) {
+  -webkit-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  -moz-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  -o-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  -ms-animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+  animation: $move $duration 0s linear infinite, sideWays $sideduration 0s ease-in-out infinite alternate;
+}
+
+.animate-up {
+  z-index: inherit;
+  ::v-deep {
+    position: absolute;
+    @include animation(moveUp, 5s, 2s);
+  }
+}
+
+.animate-leftup {
+  ::v-deep {
+    position: absolute;
+    @include animation(moveLeftUp, 5s, 2s);
+  }
+}
+
+.animate-rightup {
+  ::v-deep {
+    position: absolute;
+    @include animation(moveRightUp, 5s, 2s);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+  } 
+  1% {
+    bottom: 50%;
+    transform: scale(.9);
+    opacity: 1;
+  } 
+  50% {    
+    opacity: 1;
+  }  
+  100% {
+    bottom: 1000%;
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes moveLeftUp {
+  0% {
+    left: 0;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+  } 
+  1% {
+    bottom: 50%;
+    transform: scale(.9);
+    opacity: 1;
+  } 
+  50% {
+    left: -250%;
+    opacity: 1;
+  }  
+  100% {
+    left: -500%;
+    bottom: 1000%;
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes moveRightUp {
+  0% {
+    left: 0;
+    bottom: 0;
+    transform: scale(0);
+    opacity: 0;
+  } 
+  1% {
+    bottom: 50%;
+    transform: scale(.9);
+    opacity: 1;
+  } 
+  50% {
+    left: 250%;
+    opacity: 1;
+  }  
+  100% {
+    left: 500%;
+    bottom: 1000%;
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+   100% {
+    margin-left: 30px;
+  }
+}
+
+.content {
+  padding: 200px;
+}
+
+.heart-button {
+  position: relative;
+  ::v-deep {
+    @extend .heart-icon;
+    display: inline-block;
+    cursor: pointer;
+  }
 }
 </style>
