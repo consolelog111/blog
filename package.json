@@ -27,6 +27,7 @@
     "gsap": "^3.12.4",
     "highlight.js": "^10.7.2",
     "marked": "^2.0.3",
+    "nanopop": "2.1.0",
     "postcss": "^8.4.33",
     "sass": "^1.69.7",
     "sass-loader": "^13.3.3",
