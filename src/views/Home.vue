@@ -11,7 +11,7 @@
         <div>
           <span class="line" ref="main"></span>
         </div>
-        <div class="name font-mono">
+        <div class="name font-serif font-semibold">
           <div class="char">J</div>
           <div class="char">I</div>
           <div class="char">A</div>
@@ -28,7 +28,7 @@
       <div class="animation"></div>
     </div>
     <div class="content"> 
-      <div class="box">
+      <div class="box mb-5">
         <span class="text1 font-mono text-4xl">Why Me?</span>
       </div>
       <div class="label flex mt-10 justify-around w-full"> 
@@ -330,7 +330,7 @@ export default {
   position: relative;
   .line {
     width: 100%;
-    max-width: 660px;
+    max-width: 50rem;
     height: 8px;
     position: relative;
     display: inline-block;
@@ -339,7 +339,7 @@ export default {
   }
   .name {
     line-height: 8rem;
-    font-size: 7rem;
+    font-size: 8rem;
     position: relative;
     color: white;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -374,22 +374,7 @@ export default {
   position: absolute;
   width: 100%; 
   height: 100vh;
-  margin-top:-140vh;
- 
-  // background-image: linear-gradient(#8b9da9, #fff6e4);
-  // box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
-  // // background: url('http://unsplash.it/1200x800') center center no-repeat;
-  // // background-size: cover;
-  // // &:before {
-  // //   content: '';
-	// // position: absolute;
-	// // top: 0;
-	// // right: 0;
-	// // bottom: 0;
-	// // left: 0;
-	// // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-	// // opacity: .6; 
-  // // }
+  margin-top:-145vh;
 }
 
 .bg-img {
