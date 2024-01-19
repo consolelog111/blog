@@ -2,7 +2,7 @@
   <div class="right slider">
     <img
       class="right-logo"
-      src="../assets/userLogo.jpg"
+      src="../assets/logo.jpg"
       alt=""
     >
     <div class="title">夜尽天明</div>

@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="experience bg-white w-1/4 h-full pt-5 pb-10 px-10 rounded-lg shadow-xl flex flex-col items-center">
-          <img src="../assets/experience2.png" class="w-1/3"/>
+          <img src="../assets/experience.png" class="w-1/3"/>
           <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Experience /></div>
           <div class="font-mono"> 
             <div class="font-semibold text-red-400">01.2022 - 05.2023</div>
@@ -230,10 +230,10 @@ const anim2 = t1.fromTo('.text1', {
       ScrollTrigger.create({
         trigger: '.text1',
         animation: anim2,
-        markers: true,
+        // markers: true,
         start: "top bottom",
         end: "top top",
-        toggleActions: 'play pause pause pause',
+        toggleActions: 'play none none none',
     //     onUpdate: (self) => {
     //   console.log(`Start: ${self.start}`);
     //   console.log(`End: ${self.end}`);
