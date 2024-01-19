@@ -3,7 +3,9 @@
     <div class="initial">
       <div class="top font-mono">
         <el-button class="left-name">&lt;Shuu/></el-button>
-        <el-button class="right-botton" @click="openMenu"><span>.Click()</span><span>:void</span></el-button>
+        <el-button class="right-botton" @click="openMenu">
+          <span>.Click()</span><span>:void</span>
+        </el-button>
       </div>
       <div class="middle">
         <div>
@@ -73,12 +75,7 @@
           </div>
         </div>
       </div>
-      
-
     </div>
-
-
-    
     <div v-show="isOverlayVisible" class="overlay w-full h-full">
       <button class="float-right mt-5 mr-10" @click="closeMenu">
         <div class="close-icon"></div>
@@ -104,25 +101,23 @@
             <span class="text-white text-lg">Github(Loading....)</span>
           </div>
         </div>
+      </div>
     </div>
-    </div>
-
     <el-backtop :right="30" :bottom="100">
       <div
-      style="
-        height: 100%;
-        width: 100%;
-        font-size: 46px;
-        background-color: var(--el-bg-color-overlay);
-        box-shadow: var(--el-box-shadow-lighter);
-      "
-    >
-      👆
+        style="
+          height: 100%;
+          width: 100%;
+          font-size: 46px;
+          background-color: var(--el-bg-color-overlay);
+          box-shadow: var(--el-box-shadow-lighter);
+        "
+      >
+        👆
       </div>
     </el-backtop>
-</div>
+  </div>
 </template>
-
 
 <script>
 import { onMounted, onUnmounted, ref } from "vue";
@@ -170,7 +165,6 @@ export default {
     },
   },
   setup() {
-
     const c = ref();
     const main = ref();
     gsap.registerPlugin(ScrollTrigger);
@@ -208,19 +202,19 @@ export default {
       });
 
       const t = gsap.timeline({});
-        t.to(".char", {
-          opacity: 1,
-          delay: .1,
-          duration: .2,
-          y: 0,
-          ease: "Power4.inOut",
-          stagger: 0.1,
-        })
+      t.to(".char", {
+        opacity: 1,
+        delay: .1,
+        duration: .2,
+        y: 0,
+        ease: "Power4.inOut",
+        stagger: 0.1,
+      })
 
-        t.fromTo('.developer', { y: '-30px', opacity: 0 }, { y: 0, opacity: 1 })
+      t.fromTo('.developer', { y: '-30px', opacity: 0 }, { y: 0, opacity: 1 })
 
-        const t1 = gsap.timeline({});
-const anim2 = t1.fromTo('.text1', {
+      const t1 = gsap.timeline({});
+      const anim2 = t1.fromTo('.text1', {
         opacity: 0,
       },{
         opacity: 1,
@@ -234,14 +228,9 @@ const anim2 = t1.fromTo('.text1', {
         start: "top bottom",
         end: "top top",
         toggleActions: 'play none none none',
-    //     onUpdate: (self) => {
-    //   console.log(`Start: ${self.start}`);
-    //   console.log(`End: ${self.end}`);
-    // },
       });
 
       t1.fromTo('.label', { y: 0, opacity: 0 }, { y: 10, opacity: 1,duration: 0.3})
-        
     });
 
     return { c,main };
