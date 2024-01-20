@@ -61,7 +61,7 @@
               </el-dropdown>
             </div>
           </el-col>
-          <!-- <el-col
+          <el-col
             v-else
             :span="4"
           >
@@ -77,7 +77,7 @@
                 @click="handleClick('register')"
               >注册</el-button>
             </div>
-          </el-col> -->
+          </el-col>
         </el-row>
       </div>
     </div>

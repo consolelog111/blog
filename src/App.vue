@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="container"> -->
   <div >
-    <!-- <Nav v-if="state.isShowNav" /> -->
+    <NavBar  />
     <div class="layout">
       <router-view />
       <CustomSlider v-if="state.isShowSlider"></CustomSlider>
@@ -28,7 +28,7 @@ if (isMobileOrPc()) {
 export default defineComponent({
   name: "App",
   components: {
-    Nav: defineAsyncComponent(() => import("./components/Nav.vue")),
+    NavBar: defineAsyncComponent(() => import("./components/NavBar.vue")),
     CustomSlider: defineAsyncComponent(
       () => import("./components/CustomSlider.vue")
     ),
@@ -52,7 +52,7 @@ export default defineComponent({
     const routeChange = (val: any, oldVal: any): void => {
       const referrer: any = document.getElementById("referrer");
       if (val.path === "/") {
-        state.isShowNav = false;
+        state.isShowNav = true;
         referrer.setAttribute("content", "always");
       } else {
         state.isShowNav = true;
@@ -103,7 +103,13 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  color: #2c3e50;
+  // color: #fff;
+  background-color: #18181b;
+  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
   width: 100%;
 }
 img {

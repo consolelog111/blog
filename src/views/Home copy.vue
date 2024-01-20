@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <div class="initial">
-      <!-- <div class="top font-mono">
+      <div class="top font-mono">
         <el-button class="name-btn">&lt;Shuu/></el-button>
-        <el-button class="menu-btn" @click="openMenu">
+        <button class="menu-btn" @click="openMenu">
           <span>.Click()</span><span>:void</span>
-        </el-button>
-      </div> -->
+        </button>
+      </div>
       <div class="middle">
         <div>
           <span class="line" ref="main"></span>
@@ -245,7 +245,13 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  padding-bottom: 4rem;
+  padding-bottom: 50px;
+  background-color: #18181b;
+  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
 }
 
 .initial{
@@ -315,23 +321,23 @@ export default {
 
 .middle{
   z-index: 11;
-  margin-top: 25vh;
-  margin-left: 4rem;
+  margin-top:20vh;
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
   position: relative;
   .line {
     width: 100%;
     max-width: 50rem;
-    height: 0.5rem;
+    height: 8px;
     position: relative;
     display: inline-block;
     background-color:lightskyblue;
     border-radius: 5px; 
   }
   .name {
-    line-height: 10rem;
-    font-size: 10rem;
+    line-height: 8rem;
+    font-size: 8rem;
     position: relative;
     color: white;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -346,7 +352,7 @@ export default {
     transition: transform .3s ease-in-out;
   }
   .developer{
-    margin-top: 0.5rem;
+    margin-top: 5px;
     font-size: 30px;
     color: white;
   }
