@@ -405,7 +405,7 @@ export default defineComponent({
   width: 100%;
   color: #fff;
   position: relative;
-  z-index: 9;
+  // z-index: 9;
   .name-btn{
     margin-left: 20px;
     font-size: 34px;
@@ -477,7 +477,7 @@ export default defineComponent({
   height: 100%;
   color: #f2f2f2; 
   opacity: 0.05; 
-  z-index: -1; 
+  // z-index: -1; 
 }
 
 
