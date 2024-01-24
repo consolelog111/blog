@@ -467,11 +467,11 @@ export default defineComponent({
 
 .overlay::before {
   content: "isMenu()";
-  font-size: 20rem;
+  font-size: 54vh;
   text-align: center;
   position: absolute;
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  top: calc(50% - 15rem);
+  top: calc(50% - 45vh);
   left: 0;
   width: 100%;
   height: 100%;
