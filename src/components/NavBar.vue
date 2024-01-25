@@ -17,8 +17,8 @@
       <div class="flex w-full h-full justify-between px-10">
         <div class="menu h-full flex flex-col justify-around text-white pb-20 font-mono w-3/4">
           <button class="menu1 text-7xl text-left hover:text-[#42b883]  transition-all duration-300" @click="toHome()"><span>.isHome() </span><span class="text-base">01</span></button>
-          <button class="menu2 text-7xl text-left hover:text-[#5876e3] transition-all duration-300" @click="toHello()">.isBlog() <span class="text-base">02</span></button>
-          <button class="menu3 text-7xl text-left hover:text-[#e36868] transition-all duration-300" @click="toHome()">.isProject() <span class="text-base">03</span></button>
+          <button class="menu2 text-7xl text-left hover:text-[#5876e3] transition-all duration-300" @click="toHello()">.isBlog() <span class="text-base">02 / Go live as soon as possible :D</span></button>
+          <button class="menu3 text-7xl text-left hover:text-[#e36868] transition-all duration-300" @click="toHome()">.isProject() <span class="text-base">03 / This as well :D</span></button>
         </div>
         <div class="info flex h-full flex-col justify-center font-mono w-1/4">
           <div class="info-item flex flex-col mb-5"> 
@@ -28,11 +28,11 @@
           <div class="info-item flex flex-col mb-5"> 
             <span class="text-yellow-500/65 text-2xl underline decoration-2 underline-offset-2">How to contact me?</span>
             <span class="text-white text-lg">jiashuliu.js@gmail.com</span>
-            <span class="text-white text-lg">+358 0415765749</span>
+            <span class="text-white text-lg">+358 415765749</span>
           </div>
           <div class="info-item flex flex-col"> 
             <span class="text-yellow-500/65 text-2xl underline decoration-2 underline-offset-2">Follow me?</span>
-            <span class="text-white text-lg">Github(Loading....)</span>
+            <span class="text-white text-lg">Github(Still Loading....)</span>
           </div>
         </div>
       </div>
