@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :style="{paddingBottom: aniHeight + 'px'}">
     <div class="initial">
       <div class="middle">
         <div>
@@ -19,9 +19,9 @@
         </div>
         <span class="developer font-mono">A Full-Stack Developer🐱</span>
       </div>
-      <div class="animation"></div>
+      <div class="animation" id="animation"></div>
     </div>
-    <div class="content"> 
+    <div class="content" :style="{ marginTop: '-'+ aniHeight + 'px', minHeight: aniHeight + 'px'}"> 
       <div class="box mb-5">
         <span class="text1 font-mono text-4xl">Why Me?</span>
       </div>
@@ -161,6 +161,7 @@ export default {
   setup() {
     const c = ref();
     const main = ref();
+    const aniHeight = ref(0);
     gsap.registerPlugin(ScrollTrigger);
 
     onMounted(() => {
@@ -225,9 +226,11 @@ export default {
       });
 
       t1.fromTo('.label', { y: 0, opacity: 0 }, { y: 10, opacity: 1,duration: 0.3})
+      aniHeight.value = document.getElementById("animation").offsetHeight
+
     });
 
-    return { c,main };
+    return { c,main,aniHeight };
   } 
 };
 </script>
@@ -239,11 +242,11 @@ export default {
 .home {
   width: 100%;
   height: 100%;
-  padding-bottom: 4rem;
+  position: relative;
 }
 
 .initial{
-  width:100%;
+  width: 100%;
   height: 100%;
   position: relative;
   overflow-x: hidden;
@@ -302,8 +305,6 @@ export default {
 .content{
   position: absolute;
   width: 100%; 
-  height: 152vh;
-  margin-top:-152vh;
 }
 
 
