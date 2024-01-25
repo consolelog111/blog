@@ -1,12 +1,6 @@
 <template>
   <div class="home">
     <div class="initial">
-      <!-- <div class="top font-mono">
-        <el-button class="name-btn">&lt;Shuu/></el-button>
-        <el-button class="menu-btn" @click="openMenu">
-          <span>.Click()</span><span>:void</span>
-        </el-button>
-      </div> -->
       <div class="middle">
         <div>
           <span class="line" ref="main"></span>
@@ -63,7 +57,7 @@
           <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Skills /></div>
           <div class="font-mono "> 
             <div class="font-semibold text-red-400">Back-end</div>
-            <span>Java, SQL, Linux, Docker, Dubbo, ZooKeeper</span>
+            <span>Java, Python, SQL, Linux, Docker, Dubbo, ZooKeeper</span>
           </div>
           <div class="font-mono mt-1"> 
             <div class="font-semibold text-red-400">Front-end</div>
