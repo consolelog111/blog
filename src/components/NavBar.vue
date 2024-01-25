@@ -4,7 +4,7 @@
       class="nav"
     >
       <div class="top font-mono">
-          <el-button class="name-btn" @click="toHome()">&lt;Shuu/></el-button>
+          <el-button class="name-btn" color="#b9d7d9" @click="toHome()">&lt;Shuu/></el-button>
           <el-button class="menu-btn" @click="openMenu">
             <span>.Click()</span><span>:void</span>
           </el-button>
@@ -67,11 +67,11 @@ export default defineComponent({
   },
   methods: {
     toHome() {
-      this.isOverlayVisible=false
+      this.closeMenu()
       this.$router.push({ path: "/" });
     },
     toHello() {
-      this.isOverlayVisible=false
+      this.closeMenu()      
       // this.$router.push({ path: "/helloWorld" });
     },
     openMenu() {
@@ -251,7 +251,6 @@ export default defineComponent({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .nav-mobile {
   display: flex;
@@ -296,8 +295,6 @@ export default defineComponent({
   left: 0;
   z-index: 1000;
   width: 100%;
-  // border-bottom: 1px solid #eee;
-  // background-color: #fff;
   .nav-content {
     width: 1200px;
     margin: 0 auto;
@@ -405,54 +402,42 @@ export default defineComponent({
   width: 100%;
   color: #fff;
   position: relative;
-  // z-index: 9;
   .name-btn{
-    margin-left: 20px;
-    font-size: 34px;
+    margin-left: 1.25rem;
+    font-size: 2.1rem;
     font-weight: 600;
+    text-decoration-color:transparent;
   }
   .menu-btn{
-    margin-right: 50px;
-    text-decoration: none; 
-    transition: text-decoration 0.1s ease; 
-    line-height: 30px;
+    margin-right: 3rem;
+    line-height: 1.9rem;
+    text-decoration-color:transparent;
     span:nth-child(1){
-      color: grey;
-      font-size: 28px;
+      color: #a8a39d;
+      font-size: 1.8rem;
       font-weight: 400;
     }
-    span:nth-child(1):hover{
-      color: white;
-    }
     span:nth-child(2){
-      color: yellow;
-      font-size: 26px;
+      color: #ffff00;
+      font-size: 1.6rem;
       font-weight: 400;
     }
   }
   .menu-btn:hover {
     text-decoration: underline;
-    text-decoration-color: orange; 
+    text-decoration-color: #ffbc11; 
+    text-decoration-thickness: 3px; 
+    text-underline-offset: 8px;
+    span:nth-child(1){
+      color: white;
+    }
+  }
+  .name-btn:hover {
+    text-decoration: underline;
+    text-decoration-color: #c06c84; 
     text-decoration-thickness: 3px; 
     text-underline-offset: 8px;
   }
-
-
-  // .menu-btn:before {
-  //   content: "";
-  //   position: fixed;
-  //   background: #09090b;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   top: 100%;
-  //   z-index: -1;
-  //   transition: top 0.65s ease-out;
-  // }
-
-  // .menu-btn:hover:before {
-  //   top: 0;
-  // }
 }
 
 .overlay {
@@ -477,7 +462,6 @@ export default defineComponent({
   height: 100%;
   color: #f2f2f2; 
   opacity: 0.05; 
-  // z-index: -1; 
 }
 
 

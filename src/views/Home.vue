@@ -12,7 +12,7 @@
           <div class="char">S</div>
           <div class="char">H</div>
           <div class="char">U</div>
-          <div class="char text-yellow-500">.</div>
+          <div class="char text-[#d6ceaa]">.</div>
           <div class="char">L</div>
           <div class="char">I</div>
           <div class="char">U</div>
@@ -249,63 +249,6 @@ export default {
   overflow-x: hidden;
 }
 
-.top{
-  padding: 15px 0;
-  display: flex;
-  justify-content: space-between;
-  height: 50px;
-  width: 100%;
-  color: #fff;
-  position: relative;
-  z-index: 9;
-  .name-btn{
-    margin-left: 20px;
-    font-size: 34px;
-    font-weight: 600;
-  }
-  .menu-btn{
-    margin-right: 50px;
-    text-decoration: none; 
-    transition: text-decoration 0.1s ease; 
-    line-height: 30px;
-    span:nth-child(1){
-      color: grey;
-      font-size: 28px;
-      font-weight: 400;
-    }
-    span:nth-child(1):hover{
-      color: white;
-    }
-    span:nth-child(2){
-      color: yellow;
-      font-size: 26px;
-      font-weight: 400;
-    }
-  }
-  .menu-btn:hover {
-    text-decoration: underline;
-    text-decoration-color: orange; 
-    text-decoration-thickness: 3px; 
-    text-underline-offset: 8px;
-  }
-
-
-  .menu-btn:before {
-    content: "";
-    position: fixed;
-    background: #09090b;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 100%;
-    z-index: -1;
-    transition: top 0.65s ease-out;
-  }
-
-  .menu-btn:hover:before {
-    top: 0;
-  }
-}
 
 .middle{
   z-index: 11;
@@ -320,7 +263,7 @@ export default {
     height: 0.5rem;
     position: relative;
     display: inline-block;
-    background-color:lightskyblue;
+    background-color:#a7dbd8;
     border-radius: 5px; 
   }
   .name {
@@ -351,7 +294,7 @@ export default {
   left: 40vw;
   width: 125vh;
   height: 125vh;
-  border: orange solid 10px;
+  border: #fa6900 solid 10px;
   z-index: 10;
   rotate: 35deg;
 }
