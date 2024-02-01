@@ -75,7 +75,7 @@ export default defineComponent({
       // this.$router.push({ path: "/helloWorld" });
     },
     openMenu() {
-      this.isOverlayVisible = true;
+      this.isOverlayVisible = true
       gsap.fromTo('.overlay', {opacity: 0}, {
         opacity: 1,
         ease: 'Expo.easeInOut',
