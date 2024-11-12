@@ -72,7 +72,8 @@ export default defineComponent({
     },
     toHello() {
       this.closeMenu()      
-      // this.$router.push({ path: "/helloWorld" });
+      this.$router.push({ path: "/" });
+      // this.$router.push({ path: "/article-list" });
     },
     openMenu() {
       this.isOverlayVisible = true

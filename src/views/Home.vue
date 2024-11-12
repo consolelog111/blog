@@ -41,32 +41,42 @@
         <div class="experience bg-white w-1/4 h-full pt-5 pb-10 px-10 rounded-lg shadow-xl flex flex-col items-center">
           <img src="../assets/experience.png" class="w-1/3"/>
           <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Experience /></div>
-          <div class="font-mono"> 
-            <div class="font-semibold text-red-400">01.2022 - 05.2023</div>
-            <span class="inline-block font-semibold">Full-Stack Developer</span>
-            <span class="inline-block">Participate in frontend project design, framework selection, overcoming technical challenges, and implementing feature development. Proficiently utilize mainstream JavaScript libraries and development frameworks.</span>
-          </div>
-          <div class="font-mono mt-2"> 
-            <div class="font-semibold text-red-400">07.2019 - 12.2021</div>
-            <span class="inline-block font-semibold">Back-end Developer</span>
-            <span class="inline-block">Responsible for core module development, feature iteration, daily monitoring, troubleshooting, data backup, performance bottleneck analysis, and other related tasks in project management.</span>
-          </div>
+          <div class="font-mono">
+          <!-- Full-Stack Developer (Intern) at Eficode -->
+          <div class="font-semibold text-red-400">May 2024 – Aug 2024</div>
+          <span class="inline-block font-semibold">Full-Stack Developer- Eficode</span>
+          <span class="inline-block">
+            Developed and maintained web accessibility monitoring projects, implemented real-time audit status retrieval, automated Azure resource deployment, and ensured WCAG 2 compliance.
+          </span>
+        </div>
+
+        <div class="font-mono mt-2">
+          <!-- Full-Stack Developer & Back-End Developer at Inspur -->
+          <div class="font-semibold text-red-400">Aug 2022 – Jul 2019</div>
+          <span class="inline-block font-semibold">Full-Stack & Back-End Developer - Inspur</span>
+          <span class="inline-block">
+            Contributed to developing high-concurrency systems, refactored backend architectures, modularized core functionalities, and integrated systems with a microservices platform.
+          </span>
+        </div>
         </div>
         <div class="skill bg-white w-1/4 h-full pt-5 pb-10 px-10 rounded-lg shadow-xl flex flex-col items-center">
           <img src="../assets/skill.png" class="w-1/3"/>
           <div class="font-mono font-semibold text-2xl mt-2 mb-3">&lt; Skills /></div>
-          <div class="font-mono "> 
-            <div class="font-semibold text-red-400">Back-end</div>
-            <span>Java, Python, SQL, Linux, Docker, Dubbo, ZooKeeper</span>
+          <div class="font-mono">
+          <div class="font-semibold text-red-400">Back-End Stack</div>
+            <span>Java, Python, Node.js, Spring, Docker, Kubernetes, Nginx</span>
           </div>
-          <div class="font-mono mt-1"> 
-            <div class="font-semibold text-red-400">Front-end</div>
-            <span>JavaScript, TypeScript, HTML5, CSS3, Vue.js, React.js, Next.js, Tailwind</span>
+
+          <div class="font-mono mt-1">
+            <div class="font-semibold text-red-400">Front-End Stack</div>
+            <span>JavaScript, TypeScript, HTML5, CSS3, ES6, Vue.js, React, Next.js</span>
           </div>
-          <div class="font-mono mt-1"> 
-            <div class="font-semibold text-red-400">Data Engineering</div>
-            <span>MySQL, Oracle, MongoDB, Kafka, RabbitMQ, Redis</span>
+
+          <div class="font-mono mt-1">
+            <div class="font-semibold text-red-400">Cloud Platforms</div>
+            <span>Familiar with cloud computing platforms. Certified as an Azure Developer Associate.</span>
           </div>
+
         </div>
       </div>
     </div>
